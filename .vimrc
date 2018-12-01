@@ -2,7 +2,6 @@
 set encoding=utf-8
 
 " syntax highlighting
-"let python_highlight_all=1
 syntax on
 colorscheme monokai
 set number
@@ -43,13 +42,19 @@ nnoremap \ :noh<return>
 " normal mode let cursor reach end of line
 set virtualedit=onemore
 
-map bb <C-o>
-inoremap qw <Esc>
-inoremap wq <Esc>
-vnoremap wq <Esc>
-vnoremap qw <Esc>
-
+" lazy Ctrl+v 
 inoremap <C-v> <Esc><C-v>
 
+" cool cursor line
 set cursorline
 set cursorcolumn
+
+" ctrl-z remapping
+nnoremap zz <C-z>
+inoremap zz <C-z>
+
+" python ipdb 
+map <F12> oimport ipdb; ipdb.set_trace(context=30)<ESC>0w
+
+" vim macro call
+map <F6> 1@q

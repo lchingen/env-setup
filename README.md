@@ -1,4 +1,5 @@
-# env_setup
-1) contains .inputrc
-2) contains .vimrc
-3) contains .vim directory with monokai color map
+# Alex's Environment Setup
+1) .bashrc
+2) .inputrc
+3) .vimrc
+4) .vim directory w/ default monokai color mapping
