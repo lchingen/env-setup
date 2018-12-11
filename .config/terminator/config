@@ -1,0 +1,31 @@
+[global_config]
+  inactive_color_offset = 1.0
+  suppress_multiple_term_dialog = True
+[keybindings]
+  close_term = F4
+  copy = <Ctrl>c
+  go_down = <Ctrl>Down
+  go_left = <Ctrl>Left
+  go_right = <Ctrl>Right
+  go_up = <Ctrl>Up
+  split_vert = <Primary><Shift>d
+  split_horiz = <Primary><Shift>h
+  zoom_in = <Ctrl>plus
+  zoom_out = <Ctrl>minus
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#191700"
+    background_image = None
+    font = Monospace 14
+    foreground_color = "#f1f1f1"
+    scrollback_infinite = True
+    use_system_font = False
