@@ -53,6 +53,9 @@ set cursorcolumn
 nnoremap zz <C-z>
 inoremap zz <C-z>
 
+" ctrl-w remapping
+nnoremap ww <C-w>
+inoremap ww <C-w>
 " python ipdb 
 map <F12> oimport ipdb; ipdb.set_trace(context=30)<ESC>0w
 
