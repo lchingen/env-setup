@@ -56,8 +56,16 @@ inoremap zz <C-z>
 " ctrl-w remapping
 nnoremap ww <C-w>
 inoremap ww <C-w>
+
 " python ipdb 
 map <F12> oimport ipdb; ipdb.set_trace(context=30)<ESC>0w
 
 " vim macro call
 map <F6> 1@q
+
+" Pathogen
+execute pathogen#infect()
+
+" NerdTree
+let g:NERDTreeNodeDelimiter = "\u00a0"
+map mm :NERDTreeToggle<CR>
