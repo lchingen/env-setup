@@ -146,6 +146,7 @@ unset color_prompt force_color_prompt
 # Git alias
 alias gs='git status'
 alias gd='git diff'
+alias gl='git log'
 
 # pdf/img view alias
 alias open='xdg-open'
