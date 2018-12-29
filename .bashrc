@@ -127,8 +127,8 @@ function cd {
     }
 
 # python/ipython alias
-alias pp='python3.7'
-alias ip='ipython'
+alias pp='python3'
+alias ip='python3 -m Ipython'
 
 # list alias
 alias ll='ls -ls -G'
@@ -159,10 +159,13 @@ alias tll='tmux ls '
 # fg alias
 alias zz='fg'
 
+# activate virtual environment alias
+alias activate='source ~/venv-activate'
+
 # Python Path
-export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.7/site-packages
+export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.5/site-packages
 
 # CUDA Path
-export CUDA_HOME=/usr/local/cuda-9.0
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-9.0/lib64
-export PATH=$PATH:/usr/local/cuda-9.0/bin
+export CUDA_HOME=/usr/local/cuda-10.0
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.0/lib64
+export PATH=$PATH:/usr/local/cuda-10.0/bin
