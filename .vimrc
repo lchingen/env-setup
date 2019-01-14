@@ -11,11 +11,17 @@ hi Search ctermfg=DarkRed
 hi Pmenu ctermfg=19 ctermbg=7 cterm=NONE guifg=NONE guibg=#64666d gui=NONE
 hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
 
+" Python Syntax HL
 au BufNewFile,BufRead *.py,*.cpp,*.h,*.rst
-        \ set sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=150 expandtab autoindent fileformat=unix
+        \ set filetype=python sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=150 expandtab autoindent fileformat=unix
 
+" Verilog/System Verilog Syntax HL
 au BufNewFile,BufRead *.v,*.sv 
         \ set filetype=systemverilog sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=150 expandtab autoindent fileformat=unix
+
+" Matlab Syntax HL
+au BufNewFile,BufRead *.m
+        \ set filetype=matlab sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=150 expandtab autoindent fileformat=unix
 
 " split file
 set splitright
@@ -62,6 +68,9 @@ map <F12> oimport ipdb; ipdb.set_trace(context=30)<ESC>0w
 
 " vim macro call
 map <F6> 1@q
+
+" ctags preview remapping
+map gg <C-w>]
 
 " Pathogen
 execute pathogen#infect()

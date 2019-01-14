@@ -1,3 +1,6 @@
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
+[submodule ".vim/bundle/vim-autotag"]
+	path = .vim/bundle/vim-autotag
+	url = https://github.com/craigemery/vim-autotag
