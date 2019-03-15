@@ -12,8 +12,12 @@ hi Pmenu ctermfg=19 ctermbg=7 cterm=NONE guifg=NONE guibg=#64666d gui=NONE
 hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
 
 " Python Syntax HL
-au BufNewFile,BufRead *.py,*.cpp,*.h,*.rst
+au BufNewFile,BufRead *.py,*.rst,*.bin
         \ set filetype=python sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=150 expandtab autoindent fileformat=unix
+
+" C++ Syntax HL
+au BufNewFile,BufRead *.cpp,*.ci.*.h
+        \ set filetype=cpp sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=150 expandtab autoindent fileformat=unix
 
 " Verilog/System Verilog Syntax HL
 au BufNewFile,BufRead *.v,*.sv 
@@ -64,13 +68,20 @@ nnoremap ww <C-w>
 inoremap ww <C-w>
 
 " python ipdb 
-map <F12> oimport ipdb; ipdb.set_trace(context=30)<ESC>0w
+nnoremap <F12> oimport ipdb; ipdb.set_trace(context=30)<ESC>0w
+inoremap <F12> <ESC>oimport ipdb; ipdb.set_trace(context=30)<ESC>0w
 
 " vim macro call
 map <F6> 1@q
 
 " ctags preview remapping
-map gg <C-w>]
+" map gg <C-w>]
+map gg <C-]>
+map bb <C-t>
+
+" resize split windows
+map <F2> <Esc>:vertical resize +10<CR>
+map <F3> <Esc>:vertical resize -10<CR>
 
 " Pathogen
 execute pathogen#infect()
