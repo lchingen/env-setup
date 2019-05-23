@@ -1,4 +1,4 @@
-# Alex's Environment Setup for Ubuntu 16.04/MACOS
+# Alex's Environment Setup for Ubuntu 16.04
 ```console
 
 # Clone repository
