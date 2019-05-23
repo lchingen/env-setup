@@ -20,6 +20,7 @@
 >> git clone https://github.com/scrooloose/nerdtree
 >> git clone https://github.com/craigemery/vim-autotag
 >> git clone https://github.com/octol/vim-cpp-enhanced-highlight
+>> git clone https://github.com/plasticboy/vim-markdown.git
 
 # GoogleKeyboard Pinyin input (optional)
 >> sudo apt-get install fcitx fcitx-googlepinyin im-config
