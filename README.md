@@ -32,6 +32,6 @@
 * Ctrl+Alt+t: open terminial (terminator)
 * Super+w: expand all applications; use arrow keys to navigate
 * Super+s: show all workspaces; use arrow keys to navigate
-* Super+Ctrl+<left>: position application window in left half of the screen
-* Super+Ctrl+<right>: position application window in right half of the screen
-* Super+Ctrl+<up>: maxzimize application window
+* Super+Ctrl+left: position application window in left half of the screen
+* Super+Ctrl+right: position application window in right half of the screen
+* Super+Ctrl+up: maxzimize application window
