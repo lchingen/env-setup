@@ -24,12 +24,15 @@ Be a true engineer: use Linux, use Vim and customize them to improved your effic
 >> mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 >> curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
->> git clone https://github.com/scrooloose/nerdtree .vim/bundle/nerdtree
->> git clone https://github.com/craigemery/vim-autotag .vim/bundle/vim-auto-tag
->> git clone https://github.com/octol/vim-cpp-enhanced-highlight .vim/vim-cpp-enhanced-highlight
->> git clone https://github.com/terryma/vim-multiple-cursors .vim/vim-multiple-cursors
->> git clone https://github.com/itchyny/lightline.vim .vim/lightline.vim
->> git clone https://github.com/scrooloose/nerdcommenter .vim/nerdcommenter
+>> cd .vim/bundle
+>> git clone https://github.com/scrooloose/nerdtree
+>> git clone https://github.com/craigemery/vim-autotag
+>> git clone https://github.com/octol/vim-cpp-enhanced-highlight
+>> git clone https://github.com/terryma/vim-multiple-cursors
+>> git clone https://github.com/itchyny/lightline.vim
+>> git clone https://github.com/scrooloose/nerdcommenter
+>> git clone https://github.com/jiangmiao/auto-pairs
+>> git clone https://github.com/majutsushi/tagbar
 ```
 
 ## Input Setup
@@ -48,28 +51,3 @@ Be a true engineer: use Linux, use Vim and customize them to improved your effic
 * Super+Ctrl+left: position application window in left half of the screen
 * Super+Ctrl+right: position application window in right half of the screen
 * Super+Ctrl+up: maxzimize application window
-
-
-### Notes:
-```
-" Vim status bar
-set laststatus=2
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
-
-" Map <leader> to space
-let mapleader = "\<Space>"
-filetype plugin on
-
-" Multiple-line cursor exit
-let g:multi_cursor_quit_key = 'kj'
-
-" Code folding
-set foldmethod=indent
-set foldlevel=99
-nnoremap fd za
-```
-<Ctrl-N> select on word; <Shift-I> to edit, <c> to cut and start insert mode
-<Space><cc> comment selected section
-<Space><cu> umcommet selected section
