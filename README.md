@@ -15,11 +15,14 @@
 # Copy repository contents to root
 >> cp -a <root-to-repo>/env-setup/* ~/
 
-# Clone vim bundles
->> cd ~/.vim/bundle
->> git clone https://github.com/scrooloose/nerdtree
->> git clone https://github.com/craigemery/vim-autotag
->> git clone https://github.com/octol/vim-cpp-enhanced-highlight
+# Clone pathogen and vim bundles
+>> mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+>> curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+>> git clone https://github.com/scrooloose/nerdtree .vim/bundle/nerdtree
+>> git clone https://github.com/craigemery/vim-autotag .vim/bundle/vim-auto-tag
+>> git clone https://github.com/octol/vim-cpp-enhanced-highlight .vim/vim-cpp-enhanced-highlight
+>> git clone https://github.com/terryma/vim-multiple-cursors .vim/vim-multiple-cursors
+>> git clone https://github.com/itchyny/lightline.vim .vim/lightline.vim
 
 # GoogleKeyboard Pinyin input (optional)
 >> sudo apt-get install fcitx fcitx-googlepinyin im-config
