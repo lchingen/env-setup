@@ -42,6 +42,7 @@
 * Super+Ctrl+up: maxzimize application window
 
 ### Notes:
+```
 " Vim status bar
 set laststatus=2
 let g:lightline = {
@@ -59,3 +60,7 @@ let g:multi_cursor_quit_key = 'kj'
 set foldmethod=indent
 set foldlevel=99
 nnoremap fd za
+```
+<Ctrl-N> select on word; <Shift-I> to edit, <c> to cut and start insert mode
+<Space><cc> comment selected section
+<Space><cu> umcommet selected section
