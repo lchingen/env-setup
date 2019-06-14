@@ -49,7 +49,7 @@ Be a true engineer: use Linux, use Vim and customize them to improved your effic
 >> # restart system
 ```
 
-### Ubuntu Mobility
+## Tips for Mobility in Ubuntu
 * Ctrl+Alt+t: open terminial (terminator)
 * Super+w: expand all applications; use arrow keys to navigate
 * Super+s: show all workspaces; use arrow keys to navigate
