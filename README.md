@@ -33,6 +33,11 @@ Be a true engineer: use Linux, use Vim and customize them to improved your effic
 >> git clone https://github.com/scrooloose/nerdcommenter
 >> git clone https://github.com/jiangmiao/auto-pairs
 >> git clone https://github.com/majutsushi/tagbar
+
+# Install YouCompleteMe
+>> git clone https://github.com/Valloric/YouCompleteMe
+>> git submodule update --init --recursive
+>> python3 install.py    
 ```
 
 ## Input Setup

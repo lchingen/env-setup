@@ -147,3 +147,30 @@ let g:multi_cursor_quit_key = 'kj'
 set foldmethod=indent
 set foldlevel=99
 nnoremap fd za
+
+" Show tag bar
+nmap <F8> :TagbarToggle<CR>
+
+" You complete me settings
+let identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+let g:ycm_complete_in_comments = 1 " Completion in comments
+let g:ycm_complete_in_strings = 1 " Completion in string
+
+let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+let g:ycm_key_accept_completion = 'Enter'
+
+let g:ycm_semantic_triggers = { 'c': [ 're!\w{2}'  ]  }
+let g:ycm_python_binary_path = 'python3'
+let g:ycm_server_python_interpreter = 'python3'
+let g:ycm_autoclose_preview_window_after_completion=1
+
+let g:ycm_filetype_specific_completion_to_disable = {
+      \ 'gitcommit': 1
+\}
+
+let g:ycm_filepath_blacklist = {
+      \ 'txt': 1,
+      \ 'md': 1,
+\}
