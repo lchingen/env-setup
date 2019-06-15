@@ -1,5 +1,5 @@
 # Alex's Environment Setup for Ubuntu 16.04
-Be a true engineer: use Linux, use Vim and customize them to improved your efficiency.
+> Be a true engineer; use Linux, use Vim and customize them to constantly improve your efficiency.
 
 ## Basic Package Setup
 ```console
@@ -7,12 +7,12 @@ Be a true engineer: use Linux, use Vim and customize them to improved your effic
 >> git clone https://github.com/lchingen/env-setup
 
 # Install dependencies (if not already installed)
+>> sudo apt-get install python3-pip
 >> sudo apt-get install terminator
 >> sudo apt-get install vim
 
-# Install virtual environment (optional)
->> sudo apt-get install python3-pip
->> sudo pip3 install virtualenv
+# Install packages
+>> pip install -t requirements.txt
 ```
 
 ## Vim Setup
@@ -41,8 +41,9 @@ Be a true engineer: use Linux, use Vim and customize them to improved your effic
 >> python3 install.py    
 ```
 
-## Saving your pinky (remapping CapLock to ESC)
+## Saving Your Pinky
 ```console
+# Remapping CapLock to ESC
 >> sudo apt install gnome-tweak-tool
 >> # Typing > Cap Lock key behavior > Make Caps Lock an additional ESC
 ```
