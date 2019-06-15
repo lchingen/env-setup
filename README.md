@@ -25,7 +25,7 @@ Be a true engineer: use Linux, use Vim and customize them to improved your effic
 >> curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 >> cd .vim/bundle
->> git clone https://github.com/scrooloose/nerdtree
+(deprecated) >> git clone https://github.com/scrooloose/nerdtree
 >> git clone https://github.com/craigemery/vim-autotag
 >> git clone https://github.com/octol/vim-cpp-enhanced-highlight
 >> git clone https://github.com/terryma/vim-multiple-cursors
@@ -33,6 +33,7 @@ Be a true engineer: use Linux, use Vim and customize them to improved your effic
 >> git clone https://github.com/scrooloose/nerdcommenter
 >> git clone https://github.com/jiangmiao/auto-pairs
 >> git clone https://github.com/majutsushi/tagbar
+>> git clone https://github.com/ctrlpvim/ctrlp.vim
 
 # Install YouCompleteMe
 >> git clone https://github.com/Valloric/YouCompleteMe

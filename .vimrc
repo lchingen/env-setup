@@ -85,6 +85,9 @@ inoremap <C-v> <Esc><C-v>
 " set cursorline
 " set cursorcolumn
 
+" newline in normal mode
+nmap <CR> o<Esc>
+
 " ctrl-z remapping
 nnoremap zz <C-z>
 inoremap zz <C-z>
@@ -119,9 +122,12 @@ set tags=tags;
 " Pathogen
 execute pathogen#infect()
 
-" NerdTree
-let g:NERDTreeNodeDelimiter = "\u00a0"
-map mm :NERDTreeToggle<CR>
+" NerdTree (deprecated for fuzzy search-CtrlP)
+"let g:NERDTreeNodeDelimiter = "\u00a0"
+"map mm :NERDTreeToggle<CR>
+
+" CtrlP
+map mm :CtrlP<CR>
 
 " Vim status bar
 set laststatus=2
