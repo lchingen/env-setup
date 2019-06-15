@@ -31,15 +31,12 @@ au BufNewFile,BufRead *.m
 au BufNewFile,BufRead *.md,*.markdown
         \ set filetype=markdown sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=150 expandtab autoindent fileformat=unix
 
-
 " split file
 set splitright
 
-" ESC remapping
-inoremap kj <ESC>
-vnoremap kj <ESC>
-inoremap jk <ESC>
-vnoremap jk <ESC>
+" ESC remapping (deprecated since remapped CapLock to ESC)
+" inoremap kj <ESC>
+" vnoremap kj <ESC>
 
 " cursor movement (arrows)
 nnoremap <S-RIGHT> <right><right><right><right>
@@ -60,10 +57,6 @@ nnoremap <S-l> <right><right><right><right>
 nnoremap <S-h> <left><left><left><left>
 nnoremap <S-k> <up><up><up><up>
 nnoremap <S-j> <down><down><down><down>
-inoremap <C-l> <right>
-inoremap <C-h> <left>
-inoremap <C-k> <up>
-inoremap <C-j> <down>
 
 " jk for up/down selection for auto-complete
 inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
@@ -89,7 +82,7 @@ set virtualedit=onemore
 inoremap <C-v> <Esc><C-v>
 
 " cool cursor line
-set cursorline
+" set cursorline
 " set cursorcolumn
 
 " ctrl-z remapping

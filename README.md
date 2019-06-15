@@ -40,6 +40,12 @@ Be a true engineer: use Linux, use Vim and customize them to improved your effic
 >> python3 install.py    
 ```
 
+## Saving your pinky (remapping CapLock to ESC)
+```console
+>> sudo apt install gnome-tweak-tool
+>> # Typing > Cap Lock key behavior > Make Caps Lock an additional ESC
+```
+
 ## Input Setup
 ``` Console
 # GoogleKeyboard Pinyin input (optional)
