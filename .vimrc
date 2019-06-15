@@ -1,6 +1,13 @@
 " encoding
 set encoding=utf-8
 
+" lazy redraw for faster scrolling
+set lazyredraw
+
+" Map <leader> to space
+let mapleader = "\<Space>"
+filetype plugin on
+
 " syntax highlighting
 syntax on
 colorscheme monokai
@@ -62,14 +69,15 @@ nnoremap <S-j> <down><down><down><down>
 inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
-" accept auto-complete
+" accept auto-complete by using enter
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
 " saving
-nnoremap <C-s> :w<CR>:echom "Saved :)"<CR>
-inoremap <C-s> <Esc>:w<CR>:echom "Saved :)"<CR>
-nnoremap <C-q> :q!<CR>
-inoremap <C-q> <Esc>:q!<CR>
+"nnoremap <C-s> :w<CR>:echom "Saved :)"<CR>
+nnoremap SS :w<CR>:echom "Saved :)"<CR>
+inoremap SS <Esc>:w<CR>:echom "Saved :)"<CR>
+nnoremap QQ :q!<CR>
+inoremap QQ :q!<CR>
 
 " cancel highlights
 nnoremap \ :noh<return>
@@ -135,9 +143,6 @@ let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
 
-" Map <leader> to space
-let mapleader = "\<Space>"
-filetype plugin on
 
 " Multiple-line cursor exit
 let g:multi_cursor_quit_key = 'kj'
