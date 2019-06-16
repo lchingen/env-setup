@@ -11,6 +11,10 @@
 >> sudo apt-get install terminator
 >> sudo apt-get install vim
 
+# Install fuzzy search (FZF)
+>> git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+>> ~/.fzf/install
+
 # Install packages
 >> pip install -t requirements.txt
 ```
