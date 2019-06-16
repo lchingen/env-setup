@@ -1,14 +1,16 @@
 " encoding
 set encoding=utf-8
-
+set nocompatible
 " lazy redraw for faster scrolling
 set lazyredraw
 
 " Map <leader> to space
 let mapleader = "\<Space>"
+
+" Allow status bar highlight
 filetype plugin on
 
-" syntax highlighting
+" Syntax highlighting
 syntax on
 colorscheme monokai
 set number
@@ -45,6 +47,12 @@ set splitright
 " inoremap kj <ESC>
 " vnoremap kj <ESC>
 
+" Set backspace to delete
+set backspace=2 
+
+" Set insert mode backspace alias
+inoremap <C-h> <BS>
+
 " cursor movement (arrows)
 nnoremap <S-RIGHT> <right><right><right><right>
 nnoremap <S-LEFT> <left><left><left><left>
@@ -65,11 +73,11 @@ nnoremap <S-h> <left><left><left><left>
 nnoremap <S-k> <up><up><up><up>
 nnoremap <S-j> <down><down><down><down>
 
-" jk for up/down selection for auto-complete
-inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
-inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
+" jk for up/down selection for auto-complete (deprecated with YCM)
+"inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+"inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
-" accept auto-complete by using enter
+" accept auto-complete by using enter (deprecated with YCM)
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
 " saving
@@ -77,7 +85,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 nnoremap SS :w<CR>:echom "Saved :)"<CR>
 inoremap SS <Esc>:w<CR>:echom "Saved :)"<CR>
 nnoremap QQ :q!<CR>
-inoremap QQ :q!<CR>
+inoremap QQ <ESC>:q!<CR>
 
 " cancel highlights
 nnoremap \ :noh<return>
@@ -89,7 +97,7 @@ set virtualedit=onemore
 " lazy Ctrl+v 
 inoremap <C-v> <Esc><C-v>
 
-" cool cursor line
+" cool cursor line (deprecated for speed)
 " set cursorline
 " set cursorcolumn
 
@@ -105,11 +113,11 @@ nnoremap ww <C-w>
 inoremap ww <C-w>
 
 " python ipdb insertion
-nnoremap <F12> oimport ipdb; ipdb.set_trace(context=30)<ESC>0w
-inoremap <F12> <ESC>oimport ipdb; ipdb.set_trace(context=30)<ESC>0w
+nnoremap <F12> oimport pudb; pudb.set_trace()<ESC>0w
+inoremap <F12> <ESC>oimport pudb; pudb.set_trace()<ESC>0w
 
 " vim spellcheck
-nnoremap cc :setlocal spell spelllang=en_us<return>
+nnoremap <F9> :setlocal spell spelllang=en_us<return>
 
 " vim macro call
 map <F6> 1@q
@@ -136,6 +144,7 @@ execute pathogen#infect()
 
 " CtrlP
 map mm :CtrlP<CR>
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 " Vim status bar
 set laststatus=2
@@ -161,9 +170,11 @@ let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language
 let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in string
 
-let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-let g:ycm_key_accept_completion = 'Enter'
+"let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+"let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+let g:ycm_key_list_select_completion = ['<Tab>', '<Down>'] " tab cycling is faster
+let g:ycm_key_accept_completion = '<Enter>'
+let g:ycm_key_list_stop_completion = ['<ESC>']
 
 let g:ycm_semantic_triggers = { 'c': [ 're!\w{2}'  ]  }
 let g:ycm_python_binary_path = 'python3'

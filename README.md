@@ -68,3 +68,11 @@
 * Super+Ctrl+left: position application window in left half of the screen
 * Super+Ctrl+right: position application window in right half of the screen
 * Super+Ctrl+up: maxzimize application window
+
+## Tips for Debugging
+* Python: ipdb, pudb (the support for multithreading is limited)
+```python
+# Use like a breakpoint
+>> import ipdb; ipdb.set_trace()
+>> import pudb; pudb.set_trace()
+```
