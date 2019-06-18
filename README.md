@@ -1,4 +1,4 @@
-# Alex's Environment Setup for Ubuntu 16.04
+# Alex's Environment Setup for Ubuntu
 > Be a true engineer; use Linux, use Vim and customize them to constantly improve your efficiency.
 
 ## Basic Package Setup
@@ -38,9 +38,8 @@
 >> git clone https://github.com/jiangmiao/auto-pairs
 >> git clone https://github.com/majutsushi/tagbar
 >> git clone https://github.com/ctrlpvim/ctrlp.vim
-
-# Install YouCompleteMe
 >> git clone https://github.com/Valloric/YouCompleteMe
+>> cd YouCompleteMe
 >> git submodule update --init --recursive
 >> python3 install.py    
 ```
