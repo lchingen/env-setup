@@ -1,5 +1,6 @@
 # Alex's Environment Setup for Ubuntu 16.04
-> Be a true engineer; use Linux, use Vim and customize them to constantly improve your efficiency.
+> Be a true engineer; use Linux, use Vim.
+> Customize your tools to constantly improve efficiency.
 
 ## Basic Package Setup
 ```console
@@ -43,6 +44,12 @@
 >> git clone https://github.com/Valloric/YouCompleteMe
 >> git submodule update --init --recursive
 >> python3 install.py    
+
+# Install Yapf (automatic Python formatter - Google coding style)
+>> git clone https://github.com/google/yapf
+>> mkdir .vim/bundle/yapf
+>> cp -a yapf/plugins/autoload .vim/bundle/yapf/
+>> cp -a yapf/plugins/plugin .vim/bundle/yapf/
 ```
 
 ## Saving Your Pinky

@@ -1,6 +1,7 @@
 " encoding
 set encoding=utf-8
 set nocompatible
+
 " lazy redraw for faster scrolling
 set lazyredraw
 
@@ -22,30 +23,32 @@ hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
 
 " Python Syntax HL
 au BufNewFile,BufRead *.py,*.rst,*.bin,
-        \ set filetype=python sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=150 expandtab autoindent fileformat=unix
+        \ set filetype=python sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 expandtab autoindent fileformat=unix
 
 " C++ Syntax HL
 au BufNewFile,BufRead *.cpp,*.ci.*.h
-        \ set filetype=cpp sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=150 expandtab autoindent fileformat=unix
+        \ set filetype=cpp sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 expandtab autoindent fileformat=unix
 
 " Verilog/System Verilog Syntax HL
 au BufNewFile,BufRead *.v,*.sv 
-        \ set filetype=systemverilog sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=150 expandtab autoindent fileformat=unix
+        \ set filetype=systemverilog sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 expandtab autoindent fileformat=unix
 
 " Matlab Syntax HL
 au BufNewFile,BufRead *.m
-        \ set filetype=matlab sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=150 expandtab autoindent fileformat=unix
+        \ set filetype=matlab sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 expandtab autoindent fileformat=unix
 
 " Markdown Syntax HL
-au BufNewFile,BufRead *.md,*.markdown
-        \ set filetype=markdown sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=150 expandtab autoindent fileformat=unix
+au BufNewFile,BufRead *.md,*.markdown,*.txt
+        \ set filetype=markdown sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 expandtab autoindent fileformat=unix
+
+" set line boundary marker
+set colorcolumn=80
 
 " split file
 set splitright
 
 " ESC remapping (deprecated since remapped CapLock to ESC)
-" inoremap kj <ESC>
-" vnoremap kj <ESC>
+inoremap jj <ESC>
 
 " Set backspace to delete
 set backspace=2 
@@ -73,23 +76,19 @@ nnoremap <S-h> <left><left><left><left>
 nnoremap <S-k> <up><up><up><up>
 nnoremap <S-j> <down><down><down><down>
 
-" jk for up/down selection for auto-complete (deprecated with YCM)
-"inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
-"inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
 " accept auto-complete by using enter (deprecated with YCM)
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
 " saving
-"nnoremap <C-s> :w<CR>:echom "Saved :)"<CR>
-nnoremap SS :w<CR>:echom "Saved :)"<CR>
-inoremap SS <Esc>:w<CR>:echom "Saved :)"<CR>
-nnoremap QQ :q!<CR>
-inoremap QQ <ESC>:q!<CR>
+nnoremap <F8> :w<CR>:echom "Saved :)"<CR>
+inoremap <F8> <Esc>:w<CR>:echom "Saved :)"<CR>
+nnoremap <F9>  :q!<CR>
+inoremap <F9> <ESC>:q!<CR>
 
 " cancel highlights
 nnoremap \ :noh<return>
-nnoremap \\ :set nospell<return>
+nnoremap <F10> :set nospell<return>
 
 " normal mode let cursor reach end of line
 set virtualedit=onemore
@@ -109,15 +108,25 @@ nnoremap zz <C-z>
 inoremap zz <C-z>
 
 " ctrl-w remapping
-nnoremap ww <C-w>
-inoremap ww <C-w>
+"nnoremap ww <C-w>
+"inoremap ww <C-w>
+
+" split window navigation
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
+nnoremap <C-\> <C-w>|
+
 
 " python ipdb insertion
 nnoremap <F12> oimport pudb; pudb.set_trace()<ESC>0w
 inoremap <F12> <ESC>oimport pudb; pudb.set_trace()<ESC>0w
+"nnoremap <F12> oimport ipdb; ipdb.set_trace()<ESC>0w
+"inoremap <F12> <ESC>oimport ipdb; pudb.set_trace()<ESC>0w
 
 " vim spellcheck
-nnoremap <F9> :setlocal spell spelllang=en_us<return>
+nnoremap <F7> :setlocal spell spelllang=en_us<return>
 
 " vim macro call
 map <F6> 1@q
@@ -138,9 +147,6 @@ set tags=tags;
 " Pathogen
 execute pathogen#infect()
 
-" NerdTree (deprecated for fuzzy search-CtrlP)
-"let g:NERDTreeNodeDelimiter = "\u00a0"
-"map mm :NERDTreeToggle<CR>
 
 " CtrlP
 map mm :CtrlP<CR>
@@ -154,15 +160,14 @@ let g:lightline = {
 
 
 " Multiple-line cursor exit
-let g:multi_cursor_quit_key = 'kj'
+"let g:multi_cursor_quit_key = 'Esc'
+let g:multi_cursor_exit_from_visual_mode=1
+let g:multi_cursor_exit_from_insert_mode=1
 
 " Code folding
 set foldmethod=indent
 set foldlevel=99
 nnoremap fd za
-
-" Show tag bar
-nmap <F8> :TagbarToggle<CR>
 
 " You complete me settings
 let identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
@@ -174,7 +179,7 @@ let g:ycm_complete_in_strings = 1 " Completion in string
 "let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 let g:ycm_key_list_select_completion = ['<Tab>', '<Down>'] " tab cycling is faster
 let g:ycm_key_accept_completion = '<Enter>'
-let g:ycm_key_list_stop_completion = ['<ESC>']
+let g:ycm_key_list_stop_completion = ['<ESC>', 'kj']
 
 let g:ycm_semantic_triggers = { 'c': [ 're!\w{2}'  ]  }
 let g:ycm_python_binary_path = 'python3'
@@ -189,3 +194,19 @@ let g:ycm_filepath_blacklist = {
       \ 'txt': 1,
       \ 'md': 1,
 \}
+
+" Yapf formatter
+map <C-Y> :call yapf#YAPF()<cr>
+let g:yapf_style = "google""
+autocmd BufWritePre *.py 0,$!yapf
+
+"Show tag bar
+"nmap <F8> :TagbarToggle<CR>
+
+" NerdTree (deprecated for fuzzy search-CtrlP)
+"let g:NERDTreeNodeDelimiter = "\u00a0"
+"map mm :NERDTreeToggle<CR>
+
+" jk for up/down selection for auto-complete (deprecated with YCM)
+"inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+"inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
