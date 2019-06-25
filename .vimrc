@@ -195,10 +195,19 @@ let g:ycm_filepath_blacklist = {
       \ 'md': 1,
 \}
 
+
 " Yapf formatter
 map <C-Y> :call yapf#YAPF()<cr>
 let g:yapf_style = "google""
-autocmd BufWritePre *.py 0,$!yapf
+
+" Auto Yapf on save and restore cursorlocation
+augroup SaveApplyYapf
+	autocmd!
+	autocmd BufWritePre *.py let view=winsaveview()
+	autocmd BufWritePre *.py 0,$!yapf 
+	autocmd BufWritePre *.py call winrestview(view) 
+augroup END
+
 
 "Show tag bar
 "nmap <F8> :TagbarToggle<CR>
