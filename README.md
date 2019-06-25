@@ -39,9 +39,8 @@
 >> git clone https://github.com/jiangmiao/auto-pairs
 >> git clone https://github.com/majutsushi/tagbar
 >> git clone https://github.com/ctrlpvim/ctrlp.vim
-
-# Install YouCompleteMe
 >> git clone https://github.com/Valloric/YouCompleteMe
+>> cd YouCompleteMe
 >> git submodule update --init --recursive
 >> python3 install.py    
 
