@@ -17,12 +17,13 @@ colorscheme monokai
 set number
 set hlsearch
 hi Search ctermbg=LightYellow
-hi Search ctermfg=DarkRed
+hi Search ctermfg=DarkGrey
+
 hi Pmenu ctermfg=19 ctermbg=7 cterm=NONE guifg=NONE guibg=#64666d gui=NONE
 hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
 
 " Python Syntax HL
-au BufNewFile,BufRead *.py,*.rst,*.bin,
+au BufNewFile,BufRead *.py,*.bin
         \ set filetype=python sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 expandtab autoindent fileformat=unix
 
 " C++ Syntax HL
@@ -37,8 +38,12 @@ au BufNewFile,BufRead *.v,*.sv
 au BufNewFile,BufRead *.m
         \ set filetype=matlab sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 expandtab autoindent fileformat=unix
 
+" Assembly Syntax HL
+au BufNewFile,BufRead *.asm
+        \ set filetype=asm sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 expandtab autoindent fileformat=unix
+
 " Markdown Syntax HL
-au BufNewFile,BufRead *.md,*.markdown,*.txt
+au BufNewFile,BufRead *.md,*.markdown,*.txt,*rst
         \ set filetype=markdown sw=4 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 expandtab autoindent fileformat=unix
 
 " set line boundary marker
@@ -76,6 +81,20 @@ nnoremap <S-h> <left><left><left><left>
 nnoremap <S-k> <up><up><up><up>
 nnoremap <S-j> <down><down><down><down>
 
+
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
+set ttimeout ttimeoutlen=10
+
+
+inoremap <ESC>h <left>
+inoremap <ESC>j <down>
+inoremap <ESC>k <up>
+inoremap <ESC>l <right>
 
 " accept auto-complete by using enter (deprecated with YCM)
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
@@ -179,7 +198,7 @@ let g:ycm_complete_in_strings = 1 " Completion in string
 "let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 let g:ycm_key_list_select_completion = ['<Tab>', '<Down>'] " tab cycling is faster
 let g:ycm_key_accept_completion = '<Enter>'
-let g:ycm_key_list_stop_completion = ['<ESC>', 'kj']
+let g:ycm_key_list_stop_completion = ['<ESC>']
 
 let g:ycm_semantic_triggers = { 'c': [ 're!\w{2}'  ]  }
 let g:ycm_python_binary_path = 'python3'
@@ -197,16 +216,16 @@ let g:ycm_filepath_blacklist = {
 
 
 " Yapf formatter
-map <C-Y> :call yapf#YAPF()<cr>
+map <C-y> <ESC>:0,$!yapf<CR>
 let g:yapf_style = "google""
 
 " Auto Yapf on save and restore cursorlocation
-augroup SaveApplyYapf
-	autocmd!
-	autocmd BufWritePre *.py let view=winsaveview()
-	autocmd BufWritePre *.py 0,$!yapf 
-	autocmd BufWritePre *.py call winrestview(view) 
-augroup END
+"augroup SaveApplyYapf
+	"autocmd!
+	"autocmd BufWritePre *.py let view=winsaveview()
+	"autocmd BufWritePre *.py 0,$!yapf
+	"autocmd BufWritePre *.py call winrestview(view)
+"augroup END
 
 
 "Show tag bar
