@@ -1,5 +1,4 @@
-" encoding
-set encoding=utf-8
+" encoding set encoding=utf-8
 set nocompatible
 
 " lazy redraw for faster scrolling
@@ -139,10 +138,10 @@ nnoremap <C-\> <C-w>|
 
 
 " python ipdb insertion
-nnoremap <F12> oimport pudb; pudb.set_trace()<ESC>0w
-inoremap <F12> <ESC>oimport pudb; pudb.set_trace()<ESC>0w
-"nnoremap <F12> oimport ipdb; ipdb.set_trace()<ESC>0w
-"inoremap <F12> <ESC>oimport ipdb; pudb.set_trace()<ESC>0w
+"nnoremap <F12> oimport pudb; pudb.set_trace()<ESC>0w
+"inoremap <F12> <ESC>oimport pudb; pudb.set_trace()<ESC>0w
+nnoremap <F12> oimport ipdb; ipdb.set_trace(context=30)<ESC>0w
+inoremap <F12> <ESC>oimport ipdb; pudb.set_trace()<ESC>0w
 
 " vim spellcheck
 nnoremap <F7> :setlocal spell spelllang=en_us<return>
@@ -218,6 +217,10 @@ let g:ycm_filepath_blacklist = {
 " Yapf formatter
 map <C-y> <ESC>:0,$!yapf<CR>
 let g:yapf_style = "google""
+
+" Vim Wiki
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'default', 'ext': '.md'}]
 
 " Auto Yapf on save and restore cursorlocation
 "augroup SaveApplyYapf
